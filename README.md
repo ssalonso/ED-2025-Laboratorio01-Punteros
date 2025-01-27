@@ -92,7 +92,8 @@ asegúrate de no intentar sumar los que estén a NIL)
 
 
 
-## Ejercicio 6: Simulador de "La Isla de las Tentaciones" en Pascal
+## Ejercicio 6 (Nivel Avanzado)
+### Simulador de "La Isla de las Tentaciones" en Pascal
 
 En este ejercicio avanzado, vamos a crear un simulador del conocido programa de televisión "La Isla de las Tentaciones" utilizando Pascal. El objetivo es practicar el uso de punteros, registros, y la gestión dinámica de memoria mientras repasamos conceptos básicos de programación.
 
