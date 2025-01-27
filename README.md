@@ -1,5 +1,13 @@
 # Ejercicios de Punteros con Pascal
 
+### Información del Proyecto
+
+| Descripción   | Detalles                           |
+|---------------|------------------------------------|
+| Profesores    | Sergio Cavero y Salvador Sanchez   |
+| Asignatura    | Estructuras de Datos               |
+| Universidad   | Universidad Rey Juan Carlos        |
+
 ## Ejercicio 1 (Nivel básico)
 
 Sigue la siguiente secuencia de ejecución escribiendo código Pascal y a la vez dibuja en un 
@@ -84,26 +92,75 @@ asegúrate de no intentar sumar los que estén a NIL)
 
 
 
-## Ejercicio 6 (Nivel avanzado)
+## Ejercicio 6: Simulador de "La Isla de las Tentaciones" en Pascal
 
-Vamos a hacer un simulador de "Isla de la Tentación" en Pascal. Para ello, sigue los siguientes pasos:
+En este ejercicio avanzado, vamos a crear un simulador del conocido programa de televisión "La Isla de las Tentaciones" utilizando Pascal. El objetivo es practicar el uso de punteros, registros, y la gestión dinámica de memoria mientras repasamos conceptos básicos de programación.
 
-1. Genera un registro de tipo  "Participante" con los campos: nombre (texto), edad (entero), rol (tentador, pareja) y otroParticipante (puntero a Participante)
-2. Crea un array de MAX punteros a Participante
-3. Crea un procedimiento que cree un participante con nombre, edad y rol. Otro participante será nil.
-4. Crea un procedimiento que asigne una pareja a un participante, recibirá dos parámetros, los dos participantes
-5. Crea un procedimiento aud inicialice la isla de las tentaciones. Por cada 2 parejas, habrá un tentador. 
-6. Crea un procedimiento que muestre por pantalla la isla de las tentaciones de la siguiente manera:
-            - Nombre: XXXX
-            - Edad: XX
-            - Rol: Pareja/Tentador
-            - Pareja: XXXX --> si tuviera pareja
-            - Infiel --> si su rol fuese pareja, pero no la tiene
-            - Tentó a: XXXX --> si fuese tentador y ahora tiene pareja
+El programa simulará un reality show donde participan parejas y tentadores. Las parejas pondrán a prueba su relación mientras los tentadores intentan seducirlos. El estado de las relaciones irá cambiando a medida que se desarrolle el juego.
 
-7. Crea un procedimiento que simule una ronda de tentación. En cada ronda, se seleccionará una pareja y un tentador: 
-    - Se seleccionará al azar (50/50) quién de los dos será tentado. 
-    - Se determinará si la pareja es infiel o no (25/75). 
-    - Se actualizarán los datos. Si ha sido infiel, perderán su pareja. El tentador, tendrá una nueva pareja.
+1. Definición de Tipos y Estructuras
+Primero, necesitarás crear un registro `Participante` que contendrá la información básica de cada persona en la isla:
+- Un campo `nombre` de tipo String para almacenar el nombre del participante
+- Un campo `edad` de tipo Integer para la edad
+- Un campo `rol` que será un tipo enumerado con dos posibles valores: tentador o pareja
+- Un campo `otroParticipante` que será un puntero a otro participante (representará su pareja actual)
 
-8. Genera un programa que le pregunte al usuario si quiere jugar una ronda más o no. Si el usuario decide que sí, se realizará una ronda más. Si decide que no, se mostrará el estado final de la isla de las tentaciones.
+2. Gestión de Memoria
+Deberás implementar:
+- Una constante `NUM_PAREJAS` que determinará el número de parejas participantes
+- Una constante `NUM_PARTICIPANTES` calculada como `2 * NUM_PAREJAS + NUM_PAREJAS div 2`
+- Un array de punteros a Participante con tamaño `NUM_PARTICIPANTES`
+
+3. Implementa un procedimiento para  **crear un participante:**:
+- Recibirá como parámetros: nombre, edad y rol
+- Inicializará un nuevo participante con estos datos
+- El puntero a otro participante se iniciará como nil
+
+
+4. Implementa un procedimiento para **establecer la pareja de un participante**:
+- Recibirá dos participantes como parámetros
+- Establecerá la relación entre ambos participantes mediante punteros
+- Cada participante apuntará al otro como su pareja
+
+
+6. Crea un procedimiento para **inicializar la isla**:
+- Por cada dos parejas debe haber un tentador
+- Las parejas deben inicializarse juntas (cada miembro apuntando al otro)
+- Los tentadores comienzan sin estar emparejados (puntero a nil)
+- Los participantes se almacenarán en el array de manera ordenada, ¿cómo podrías hacerlo para no tener que determinar el rol de cada persona del array?
+
+
+5. Implementa un procedimiento que **muestre el estado actual de la isla**, incluyendo para cada participante:
+- Nombre y edad
+- Su rol (pareja o tentador)
+- Para participantes en pareja: el nombre de su pareja actual
+- Para participantes que eran pareja pero ya no tienen pareja: mostrar "Infiel"
+- Para tentadores que han conseguido emparejar: mostrar "Tentó a: [nombre]"
+
+6. Implementa un procedimiento para **simular una ronda de tentación**:
+- Selección aleatoria de una pareja para ser tentada
+- Selección aleatoria de un tentador
+- Decisión aleatoria de qué miembro de la pareja será tentado (50% de probabilidad)
+- Probabilidad del 25% de que ocurra una infidelidad
+- Actualización del estado:
+  * Si hay infidelidad: la pareja original se rompe y se forma una nueva con el tentador
+  * Si no hay infidelidad: solo se muestra el intento fallido
+
+7. Finalmente, implementa el programa principal que:
+- Muestre el estado actual de la isla
+- Pregunte al usuario si desea continuar con otra ronda
+- Ejecute rondas de tentación hasta que el usuario decida terminar
+- Muestre el estado final de todas las relaciones
+
+Consideraciones Adicionales
+- Utiliza gestión dinámica de memoria (New/Dispose) apropiadamente
+- Maneja los punteros con cuidado para evitar referencias inválidas
+- Asegúrate de que la actualización de las relaciones mantiene la consistencia de los datos
+- Incluye mensajes informativos que hagan el seguimiento del juego más interesante
+
+
+Retos Opcionales
+- Añade estadísticas de infidelidad por participante
+- Implementa un sistema de afinidad entre participantes
+- Añade eventos especiales durante las rondas de tentación
+- Permite que el usuario seleccione manualmente las parejas a tentar
