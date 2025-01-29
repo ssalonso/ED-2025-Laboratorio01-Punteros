@@ -87,7 +87,7 @@ asegúrate de no intentar sumar los que estén a NIL)
 3. Crea una coordenada_3D en cada una de las posiciones inicializado todas las  coordenadas con números aleatorios
 4. Implementa un subprograma que libere la memoria asignada a una posición  
 5. Implementa un procedimiento que sume todas las x  
-6. Implementa un subprograma que permita añadir una coordenada en la primera  posición libre del array
+6. (Opcional) Implementa un subprograma que permita añadir una coordenada en la primera  posición libre del array
 7. Implementa un subprograma que calcule la máxima coordenada y (debes comprobar  antes, pues puede que alguna posición no tenga coordenada y esté a NIL)
 
 
