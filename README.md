@@ -7,6 +7,7 @@
 | Profesores    | Sergio Cavero y Salvador Sanchez   |
 | Asignatura    | Estructuras de Datos               |
 | Universidad   | Universidad Rey Juan Carlos        |
+| Curso         | 2024/2025                          |
 
 ## Ejercicio 1 (Nivel básico)
 
