@@ -12,7 +12,7 @@
 ## Ejercicio 1 (Nivel básico)
 
 Sigue la siguiente secuencia de ejecución escribiendo código Pascal y a la vez dibuja en un 
-papel lo que ocurre tras ejecutar cada instrucción [Nivel básico]: 
+papel lo que ocurre tras ejecutar cada instrucción: 
  
 1. Declara variable entera (x) 
 2. Declara una variable de tipo puntero a entero (p_ent) 
@@ -34,7 +34,7 @@ papel lo que ocurre tras ejecutar cada instrucción [Nivel básico]:
 ## Ejercicio 2 (Nivel básico)
 
 Sigue la siguiente secuencia de ejecución escribiendo código Pascal y a la vez dibuja en un 
-papel lo que ocurre tras ejecutar cada instrucción [Nivel básico]: 
+papel lo que ocurre tras ejecutar cada instrucción: 
  
 1. Crea un array de 3 enteros V e inicialízalo con números aleatorios.  
 2. Muestra sus valores por pantalla 
