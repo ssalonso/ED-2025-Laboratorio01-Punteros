@@ -33,8 +33,7 @@ var
 { 4.' Implementa un subprograma que libere la memoria asignada a todas las posiciones }
 
 
-{ 5. Implementa un procedimiento que sume todas las x de las coordenadas }
-
+{ 5. Implementa una función que sume todas las x de las coordenadas }
 
 
 { 5.' Implementa una función que sume las coordenadas de todas las posiciones }
