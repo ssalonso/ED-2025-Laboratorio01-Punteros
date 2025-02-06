@@ -28,7 +28,7 @@ begin
       Debes elegir una u otra, pues si incluyes las dos estarás provocando un error al tratar de devolver
       2 veces la misma memoria!! }
 
-    dispose(punteroNodo); { Alternativa 1: Liberar el nodo desde el puntero que lo reservó inicialmente}
+    dispose(punteroNodo);            { Alternativa 1: Liberar el nodo desde el puntero que lo reservó inicialmente }
     dispose(punteroNodo^.otro_nodo); { Alternativa 2: Liberar el nodo a través del campo "otro_nodo" del propio nodo }
 
     { Termina }
